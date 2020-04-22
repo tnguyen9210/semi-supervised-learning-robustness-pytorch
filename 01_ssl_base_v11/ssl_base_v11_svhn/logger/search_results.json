@@ -1,0 +1,538 @@
+{
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.0001))": [
+    21.0,
+    22.1228,
+    20.2,
+    1
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 150), ('lr', 0.004))": [
+    38.2,
+    42.9087,
+    43.7,
+    2
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 150), ('lr', 0.001))": [
+    55.0,
+    54.4023,
+    83.9,
+    3
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    25.0,
+    25.2612,
+    28.1,
+    4
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    59.6,
+    62.2887,
+    82.7,
+    5
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 50), ('lr', 0.0005))": [
+    27.0,
+    31.25,
+    29.8,
+    6
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.0001))": [
+    21.2,
+    21.973,
+    20.6,
+    7
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    54.5,
+    54.4983,
+    65.6,
+    8
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    25.4,
+    27.7889,
+    26.3,
+    9
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    79.3,
+    84.3039,
+    100.0,
+    10
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 150), ('lr', 0.0001))": [
+    30.5,
+    34.6612,
+    34.3,
+    11
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    36.1,
+    38.1108,
+    42.4,
+    12
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    40.2,
+    41.7409,
+    46.9,
+    13
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    32.4,
+    36.9353,
+    39.1,
+    14
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.0001))": [
+    20.6,
+    22.2687,
+    19.9,
+    15
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 50), ('lr', 0.0001))": [
+    19.4,
+    20.4249,
+    18.5,
+    16
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 50), ('lr', 0.0005))": [
+    26.0,
+    30.0361,
+    27.2,
+    17
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 150), ('lr', 0.004))": [
+    52.1,
+    55.4817,
+    61.1,
+    18
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    32.3,
+    34.0427,
+    37.0,
+    19
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    27.4,
+    29.675,
+    28.8,
+    20
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 150), ('lr', 0.004))": [
+    32.2,
+    33.4281,
+    34.0,
+    21
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 50), ('lr', 0.001))": [
+    50.5,
+    53.6532,
+    57.5,
+    22
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    59.7,
+    58.4396,
+    72.0,
+    23
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    18.4,
+    19.6374,
+    18.2,
+    24
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    56.2,
+    58.1054,
+    65.3,
+    25
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 150), ('lr', 0.001))": [
+    47.7,
+    47.7067,
+    54.8,
+    26
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    22.7,
+    24.2279,
+    24.0,
+    27
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    16.9,
+    17.4017,
+    16.6,
+    28
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    31.8,
+    33.0977,
+    32.4,
+    29
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    52.0,
+    56.6149,
+    64.3,
+    30
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    34.3,
+    39.171,
+    42.7,
+    31
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    28.6,
+    29.1603,
+    29.5,
+    32
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 50), ('lr', 0.0005))": [
+    30.8,
+    34.4922,
+    32.8,
+    33
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 50), ('lr', 0.001))": [
+    57.5,
+    59.3846,
+    79.4,
+    34
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 50), ('lr', 0.004))": [
+    27.6,
+    31.1424,
+    28.2,
+    35
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    50.1,
+    53.5303,
+    61.2,
+    36
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": [
+    30.3,
+    35.7982,
+    34.0,
+    37
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    26.6,
+    30.6238,
+    28.6,
+    38
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    46.7,
+    48.7093,
+    52.4,
+    39
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 50), ('lr', 0.0001))": [
+    21.2,
+    23.3597,
+    23.3,
+    40
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    72.2,
+    74.201,
+    99.7,
+    41
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 50), ('lr', 0.0005))": [
+    59.4,
+    61.9584,
+    73.7,
+    42
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.0001))": [
+    34.4,
+    37.9149,
+    56.0,
+    43
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    49.0,
+    51.4482,
+    60.0,
+    44
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    42.8,
+    45.0715,
+    56.8,
+    45
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 50), ('lr', 0.0005))": [
+    34.4,
+    38.5026,
+    38.2,
+    46
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    75.3,
+    77.0628,
+    100.0,
+    47
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    57.8,
+    58.2091,
+    79.2,
+    48
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    55.8,
+    57.0874,
+    72.2,
+    49
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    42.4,
+    45.6669,
+    46.0,
+    50
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": [
+    57.9,
+    60.6561,
+    70.1,
+    51
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    42.1,
+    43.6809,
+    46.6,
+    52
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": [
+    79.7,
+    78.8376,
+    99.0,
+    53
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    58.4,
+    61.1171,
+    68.6,
+    54
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    77.6,
+    80.2589,
+    98.9,
+    55
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    29.3,
+    31.7878,
+    32.2,
+    56
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    78.6,
+    81.2538,
+    100.0,
+    57
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    76.2,
+    79.529,
+    99.9,
+    58
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.0001))": [
+    28.2,
+    30.7276,
+    30.6,
+    59
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    48.1,
+    51.6672,
+    53.7,
+    60
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    40.6,
+    44.3877,
+    49.6,
+    61
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    50.2,
+    49.9577,
+    56.7,
+    62
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    54.1,
+    57.5484,
+    68.9,
+    63
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.6), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": [
+    57.2,
+    60.149,
+    75.2,
+    64
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    72.3,
+    74.2432,
+    91.7,
+    65
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": [
+    40.7,
+    43.8614,
+    45.7,
+    66
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    36.9,
+    39.3132,
+    38.8,
+    67
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    52.8,
+    52.0628,
+    59.1,
+    68
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": [
+    40.7,
+    41.3337,
+    41.7,
+    69
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 50), ('lr', 0.004))": [
+    68.9,
+    70.736,
+    96.1,
+    70
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    50.6,
+    52.4662,
+    60.2,
+    71
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    46.7,
+    53.027,
+    57.9,
+    72
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    77.9,
+    78.5533,
+    99.8,
+    73
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.004))": [
+    30.7,
+    32.2526,
+    35.3,
+    74
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 150), ('lr', 0.004))": [
+    58.3,
+    61.6664,
+    67.6,
+    75
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    37.6,
+    42.1558,
+    44.5,
+    76
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": [
+    77.5,
+    80.7929,
+    99.5,
+    77
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.0001))": [
+    35.1,
+    38.2452,
+    41.5,
+    78
+  ],
+  "(('enc_droprate1', 0.4), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    50.4,
+    52.9156,
+    62.2,
+    79
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    75.4,
+    76.9322,
+    98.7,
+    80
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": [
+    78.3,
+    80.5547,
+    100.0,
+    81
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.4), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    38.0,
+    40.8574,
+    41.3,
+    82
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    41.2,
+    44.2417,
+    47.9,
+    83
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 50), ('lr', 0.001))": [
+    74.7,
+    75.3995,
+    100.0,
+    84
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": [
+    50.5,
+    49.5582,
+    68.8,
+    85
+  ],
+  "(('enc_droprate1', 0.6), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": [
+    36.9,
+    40.3158,
+    44.0,
+    86
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 150), ('lr', 0.001))": [
+    48.5,
+    50.9335,
+    56.5,
+    87
+  ],
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.4), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 200), ('lr', 0.0005))": [
+    50.3,
+    53.2076,
+    59.7,
+    88
+  ],
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.6), ('img_cls_droprate2', 0.4), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.0001))": null,
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.6), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": null,
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": null,
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.0), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.0005))": null,
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 150), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": null,
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.0), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.0), ('img_cls_hidden_dim1', 100), ('img_cls_hidden_dim2', 100), ('lr', 0.001))": null,
+  "(('enc_droprate1', 0.0), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 200), ('img_cls_hidden_dim2', 200), ('lr', 0.004))": null,
+  "(('enc_droprate1', 0.2), ('enc_droprate2', 0.2), ('img_cls_droprate1', 0.2), ('img_cls_droprate2', 0.2), ('img_cls_hidden_dim1', 50), ('img_cls_hidden_dim2', 200), ('lr', 0.001))": null
+}
