@@ -1,0 +1,323 @@
+INFO: Running with the following configs:
+	seed : 0
+	device : cuda:0
+	data_dir : ../../data/svhn_v11
+	domain : svhn_orig
+	img_size : 32
+	num_epochs : 149
+	batch_size : 128
+	optim : sgd
+	lr : 0.1
+	momentum : 0.9
+	l2_params : 0.0005
+	max_grad_norm : 1
+	scheduler_t0 : 10
+	scheduler_tmult : 2
+	vat_niters : 1
+	vat_eps : 3.0
+	vat_xi : 0.0001
+	resnet_depth : 28
+	resnet_widen_factor : 2
+	resnet_group1_droprate : 0.3
+	resnet_group2_droprate : 0.3
+	resnet_group3_droprate : 0.3
+	img_cls_nlayers : 2
+	img_cls_hidden_dim1 : 128
+	img_cls_hidden_dim2 : 128
+	img_cls_droprate1 : 0.5
+	img_cls_droprate2 : 0.5
+	model_id : 11
+	model_dir : ./saved_models
+	ckpt_name : best_model.ckpt
+	load : False
+
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 0  >> 25.31 (24.320 sec) : loss = 6.68557
+INFO: epoch 0  >> 50.45 (48.014 sec) : loss = 6.76914
+INFO: epoch 0  >> 75.58 (71.776 sec) : loss = 6.73505
+INFO: epoch 0  >> 100.00 (94.257 sec) : lr 0.10, train loss 6.81809
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.9
+INFO: test : error = 80.6546
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 1  >> 25.31 (24.067 sec) : loss = 7.11562
+INFO: epoch 1  >> 50.45 (47.778 sec) : loss = 6.62580
+INFO: epoch 1  >> 75.58 (71.479 sec) : loss = 6.48052
+INFO: epoch 1  >> 100.00 (94.032 sec) : lr 0.10, train loss 6.66816
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 2  >> 25.31 (24.054 sec) : loss = 7.06261
+INFO: epoch 2  >> 50.45 (47.850 sec) : loss = 6.78169
+INFO: epoch 2  >> 75.58 (71.585 sec) : loss = 6.89279
+INFO: epoch 2  >> 100.00 (94.087 sec) : lr 0.09, train loss 6.65159
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4164
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 3  >> 25.31 (24.097 sec) : loss = 6.20318
+INFO: epoch 3  >> 50.45 (47.822 sec) : loss = 6.60055
+INFO: epoch 3  >> 75.58 (71.604 sec) : loss = 6.31884
+INFO: epoch 3  >> 100.00 (94.107 sec) : lr 0.08, train loss 6.64429
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 4  >> 25.31 (24.071 sec) : loss = 6.68109
+INFO: epoch 4  >> 50.45 (47.836 sec) : loss = 6.12729
+INFO: epoch 4  >> 75.58 (71.560 sec) : loss = 6.18874
+INFO: epoch 4  >> 100.00 (94.113 sec) : lr 0.07, train loss 6.57197
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: Running with the following configs:
+	seed : 0
+	device : cuda:0
+	data_dir : ../../data/svhn_v11
+	domain : svhn_orig
+	img_size : 32
+	num_epochs : 149
+	batch_size : 128
+	optim : sgd
+	lr : 0.1
+	momentum : 0.9
+	l2_params : 0.0005
+	max_grad_norm : 1
+	scheduler_t0 : 10
+	scheduler_tmult : 2
+	vat_niters : 1
+	vat_eps : 3.0
+	vat_xi : 0.01
+	resnet_depth : 28
+	resnet_widen_factor : 2
+	resnet_group1_droprate : 0.3
+	resnet_group2_droprate : 0.3
+	resnet_group3_droprate : 0.3
+	img_cls_nlayers : 2
+	img_cls_hidden_dim1 : 128
+	img_cls_hidden_dim2 : 128
+	img_cls_droprate1 : 0.5
+	img_cls_droprate2 : 0.5
+	model_id : 11
+	model_dir : ./saved_models
+	ckpt_name : best_model.ckpt
+	load : False
+
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 0  >> 25.31 (24.333 sec) : loss = 6.64651
+INFO: epoch 0  >> 50.45 (48.050 sec) : loss = 6.73744
+INFO: epoch 0  >> 75.58 (71.756 sec) : loss = 6.77067
+INFO: epoch 0  >> 100.00 (94.294 sec) : lr 0.10, train loss 6.79819
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 1  >> 25.31 (24.004 sec) : loss = 7.11710
+INFO: epoch 1  >> 50.45 (47.717 sec) : loss = 6.66112
+INFO: epoch 1  >> 75.58 (71.438 sec) : loss = 6.52809
+INFO: epoch 1  >> 100.00 (93.938 sec) : lr 0.10, train loss 6.67210
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 2  >> 25.31 (24.041 sec) : loss = 7.08690
+INFO: epoch 2  >> 50.45 (47.736 sec) : loss = 6.75234
+INFO: epoch 2  >> 75.58 (71.462 sec) : loss = 6.84938
+INFO: epoch 2  >> 100.00 (93.970 sec) : lr 0.09, train loss 6.65698
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: Running with the following configs:
+	seed : 0
+	device : cuda:0
+	data_dir : ../../data/svhn_v11
+	domain : svhn_orig
+	img_size : 32
+	num_epochs : 149
+	batch_size : 128
+	optim : sgd
+	lr : 0.1
+	momentum : 0.9
+	l2_params : 0.0005
+	max_grad_norm : 1
+	scheduler_t0 : 10
+	scheduler_tmult : 2
+	vat_niters : 1
+	vat_eps : 3.0
+	vat_xi : 0.1
+	resnet_depth : 28
+	resnet_widen_factor : 2
+	resnet_group1_droprate : 0.3
+	resnet_group2_droprate : 0.3
+	resnet_group3_droprate : 0.3
+	img_cls_nlayers : 2
+	img_cls_hidden_dim1 : 128
+	img_cls_hidden_dim2 : 128
+	img_cls_droprate1 : 0.5
+	img_cls_droprate2 : 0.5
+	model_id : 11
+	model_dir : ./saved_models
+	ckpt_name : best_model.ckpt
+	load : False
+
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 0  >> 25.31 (24.419 sec) : loss = 6.65728
+INFO: epoch 0  >> 50.45 (48.217 sec) : loss = 6.70201
+INFO: epoch 0  >> 75.58 (72.018 sec) : loss = 6.74073
+INFO: epoch 0  >> 100.00 (94.573 sec) : lr 0.10, train loss 6.81160
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 1  >> 25.31 (24.113 sec) : loss = 7.11428
+INFO: epoch 1  >> 50.45 (47.913 sec) : loss = 6.62454
+INFO: epoch 1  >> 75.58 (71.723 sec) : loss = 6.49531
+INFO: epoch 1  >> 100.00 (94.298 sec) : lr 0.10, train loss 6.67148
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 2  >> 25.31 (24.126 sec) : loss = 7.09672
+INFO: epoch 2  >> 50.45 (47.948 sec) : loss = 6.75037
+INFO: epoch 2  >> 75.58 (71.766 sec) : loss = 6.85749
+INFO: epoch 2  >> 100.00 (94.339 sec) : lr 0.09, train loss 6.65664
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 3  >> 25.31 (24.168 sec) : loss = 6.30580
+INFO: epoch 3  >> 50.45 (47.964 sec) : loss = 6.66131
+INFO: epoch 3  >> 75.58 (71.748 sec) : loss = 6.26153
+INFO: epoch 3  >> 100.00 (94.341 sec) : lr 0.08, train loss 6.66490
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 4  >> 25.31 (24.112 sec) : loss = 6.68751
+INFO: epoch 4  >> 50.45 (47.934 sec) : loss = 6.35520
+INFO: epoch 4  >> 75.58 (71.760 sec) : loss = 6.36745
+INFO: epoch 4  >> 100.00 (94.338 sec) : lr 0.07, train loss 6.65364
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 80.3
+INFO: test : error = 78.0808
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 5  >> 25.31 (24.106 sec) : loss = 6.13694
+INFO: epoch 5  >> 50.45 (47.903 sec) : loss = 6.33971
+INFO: epoch 5  >> 75.58 (71.728 sec) : loss = 4.39848
+INFO: epoch 5  >> 100.00 (94.291 sec) : lr 0.05, train loss 5.60235
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 39.7
+INFO: test : error = 37.8841
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: Running with the following configs:
+	seed : 0
+	device : cuda:0
+	data_dir : ../../data/svhn_v11
+	domain : svhn_orig
+	img_size : 32
+	num_epochs : 149
+	batch_size : 128
+	optim : sgd
+	lr : 0.1
+	momentum : 0.9
+	l2_params : 0.0005
+	max_grad_norm : 1
+	scheduler_t0 : 10
+	scheduler_tmult : 2
+	vat_niters : 1
+	vat_eps : 3.0
+	vat_xi : 0.1
+	resnet_depth : 28
+	resnet_widen_factor : 4
+	resnet_group1_droprate : 0.3
+	resnet_group2_droprate : 0.3
+	resnet_group3_droprate : 0.3
+	img_cls_nlayers : 2
+	img_cls_hidden_dim1 : 128
+	img_cls_hidden_dim2 : 128
+	img_cls_droprate1 : 0.5
+	img_cls_droprate2 : 0.5
+	model_id : 11
+	model_dir : ./saved_models
+	ckpt_name : best_model.ckpt
+	load : False
+
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 0  >> 25.31 (33.170 sec) : loss = 6.82460
+INFO: epoch 0  >> 50.45 (65.627 sec) : loss = 6.47349
+INFO: epoch 0  >> 75.58 (98.062 sec) : loss = 6.91359
+INFO: epoch 0  >> 100.00 (129.421 sec) : lr 0.10, train loss 7.11107
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 1  >> 25.31 (32.855 sec) : loss = 6.62989
+INFO: epoch 1  >> 50.45 (65.359 sec) : loss = 6.55760
+INFO: epoch 1  >> 75.58 (97.802 sec) : loss = 6.73468
+INFO: epoch 1  >> 100.00 (129.144 sec) : lr 0.10, train loss 6.69404
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.7
+INFO: test : error = 80.4433
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 2  >> 25.31 (32.939 sec) : loss = 6.64493
+INFO: epoch 2  >> 50.45 (65.454 sec) : loss = 6.76745
+INFO: epoch 2  >> 75.58 (97.982 sec) : loss = 6.43432
+INFO: epoch 2  >> 100.00 (129.397 sec) : lr 0.09, train loss 6.65757
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 3  >> 25.31 (32.889 sec) : loss = 6.47580
+INFO: epoch 3  >> 50.45 (65.333 sec) : loss = 6.68315
+INFO: epoch 3  >> 75.58 (97.824 sec) : loss = 7.05624
+INFO: epoch 3  >> 100.00 (129.124 sec) : lr 0.08, train loss 6.66375
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.4
+INFO: test : error = 80.305
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 4  >> 25.31 (32.974 sec) : loss = 6.90790
+INFO: epoch 4  >> 50.45 (65.512 sec) : loss = 6.35198
+INFO: epoch 4  >> 75.58 (98.038 sec) : loss = 6.58173
+INFO: epoch 4  >> 100.00 (129.442 sec) : lr 0.07, train loss 6.66891
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 81.6
+INFO: test : error = 80.4126
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 5  >> 25.31 (32.920 sec) : loss = 7.06545
+INFO: epoch 5  >> 50.45 (65.454 sec) : loss = 7.05301
+INFO: epoch 5  >> 75.58 (97.935 sec) : loss = 6.42168
+INFO: epoch 5  >> 100.00 (129.292 sec) : lr 0.05, train loss 6.62837
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 80.4
+INFO: test : error = 78.6071
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 6  >> 25.31 (32.924 sec) : loss = 5.69591
+INFO: epoch 6  >> 50.45 (65.470 sec) : loss = 6.30797
+INFO: epoch 6  >> 75.58 (97.955 sec) : loss = 5.84605
+INFO: epoch 6  >> 100.00 (129.332 sec) : lr 0.03, train loss 6.22908
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 61.9
+INFO: test : error = 64.2517
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 7  >> 25.31 (32.944 sec) : loss = 4.55099

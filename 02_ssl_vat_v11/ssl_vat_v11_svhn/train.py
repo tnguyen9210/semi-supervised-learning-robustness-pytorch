@@ -8,7 +8,7 @@ from core.deep_model import DeepModel
 
 from dataset import load_data
 from config import parse_args
-from utils import print_config, set_logger, EarlyStopper
+from utils import print_config, save_config, set_logger, EarlyStopper
 
 
 def train(config=None):
@@ -21,15 +21,18 @@ def train(config=None):
     torch.cuda.manual_seed(args['seed'])
     
     # set logger
+    model_dir = f"{args['model_dir']}/{args['model_id']}"
     logger = set_logger(f"logger/{args['model_id']}", verbose=True)
     logger.info(print_config(args))
+    save_config(args, model_dir, verbose=True)
     
     # load data
     train_lbl, train_unlbl, dev_lbl, test_lbl = \
         load_data(args['domain'], args['data_dir'],
                   args['img_size'], args['batch_size'])
 
-    eval_datasets = OrderedDict({'dev': dev_lbl, 'test': test_lbl})
+    eval_datasets = OrderedDict(
+        {'dev': dev_lbl, 'test': test_lbl})
     eval_perfs = defaultdict()
     for dn in eval_datasets:
         eval_perfs[dn] = defaultdict()
@@ -60,12 +63,12 @@ def train(config=None):
             best_epoch = epoch
             logger.info(">>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<")
             # save the best state
-            # model.save_state(model_dir)
+            model.save_state(model_dir)
 
         # execute early stop if dev score does not improve after n epochs
-        dev_score = eval_perfs['dev'][epoch]['acc']
-        if early_stopper.check(dev_score, logger):
-            break
+        # dev_score = eval_perfs['dev'][epoch]['acc']
+        # if early_stopper.check(dev_score, logger):
+        #     break
 
     logger.info(f">>>>>>>>>>>>>>BEST PERFORMANCE, epoch {best_epoch}<<<<<<<<<<<<<<<<<<")
     for ds in eval_datasets:

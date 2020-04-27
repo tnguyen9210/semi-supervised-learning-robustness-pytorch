@@ -6,9 +6,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torch.autograd import Variable
 
-from core.neural_net import ImgClassifierSmall, ImgClassifierLarge
+from core.neural_net import ResNet
 
 
 class DeepModel(object):
@@ -20,14 +19,18 @@ class DeepModel(object):
         self.vat_xi = args['vat_xi']
         
         # neuralnet and losses
-        self.net = ImgClassifierSmall(args)
+        self.net = ResNet(args)
         self.cls_crit = nn.CrossEntropyLoss()
 
         self.net.to(self.device)
         self.cls_crit.to(self.device)
         
         # optimizer and lr scheduler
-        self.optim = optim.Adam(self.net.parameters(), lr=args['lr'])
+        self.optim = optim.SGD(
+            self.net.parameters(), lr=args['lr'], momentum=args['momentum'],
+            weight_decay=args['l2_params'])
+        self.lr_scheduler = optim.lr_scheduler.CosineAnnealingWarmRestarts(
+            self.optim, args['scheduler_t0'], args['scheduler_tmult'])
 
     def at_crit(self, x, y):
 
@@ -69,7 +72,7 @@ class DeepModel(object):
 
         r_adv = self.vat_eps*noise
         x_adv = x + r_adv
-        logit_yhat = self.net(x_adv)
+        logit_yhat = self.net(x_adv.detach())
         kl_div = compute_kl_div(logit_y.detach(), logit_yhat)
 
         return kl_div
@@ -132,9 +135,12 @@ class DeepModel(object):
             if i % interval == 0:
                 logger.info('epoch %s  >> %3.2f (%2.3f sec) : loss = %2.5f'%(
                     epoch, (i+1)*100.0/num_batches, (time.time()-start_time), loss))
-                
-        logger.info('epoch %s  >> 100.00 (%2.3f sec) : train loss %2.5f'%(
-            epoch, (time.time()-start_time), train_loss/num_batches))
+
+        lr = self.optim.param_groups[0]['lr']
+        logger.info('epoch %s  >> 100.00 (%2.3f sec) : lr %2.2f, train loss %2.5f'%(
+            epoch, (time.time()-start_time), lr, train_loss/num_batches))
+        
+        # self.lr_scheduler.step()
         
         return train_loss/num_batches
 
@@ -160,6 +166,21 @@ class DeepModel(object):
         acc = eval_y_corrects/num_eval*100
         return {'acc': round(acc, 4), 'error': round(100-acc, 4)}
 
+    def load_state(self, filename):
+        state_dict = torch.load(filename, map_location='cuda:0')
+        self.net.load_state_dict(state_dict)
+        
+    def save_state(self, save_dir, epoch=None):
+        if epoch:
+            save_file = f"{save_dir}/epoch_{epoch}.ckpt"
+        else:
+            save_file = f"{save_dir}/best_model.ckpt"
+        # prevent disruption during saving
+        try:
+            torch.save(self.net.state_dict(), save_file)
+            print("model saved to {}".format(save_file))
+        except BaseException:
+            print("[Warning: Saving failed... continuing anyway.]")
 
 def normalize_vector(d):
     d_shape = d.shape
