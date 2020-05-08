@@ -1,3 +1,4 @@
+
 import time
 import numpy as np
 
@@ -7,17 +8,16 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 from core.neural_net import ResNet
-
+from core.transform import ImageTransform
 
 class DeepModel(object):
     def __init__(self, args):
         self.device = args['device']
-        self.num_epochs = args['num_epochs']
-        self.max_grad_norm = args['max_grad_norm']
         
         # neuralnet and losses
         self.net = ResNet(args)
         self.cls_crit = nn.CrossEntropyLoss()
+        self.transform = ImageTransform(random_horizontal_flip=True, random_crop=True)
 
         self.net.to(self.device)
         self.cls_crit.to(self.device)
@@ -51,6 +51,7 @@ class DeepModel(object):
             train_lbl_y = train_lbl_y.to(self.device)
             
             # feed data
+            train_lbl_x = self.transform(train_lbl_x)
             train_lbl_logit_y = self.net(train_lbl_x)
             
             # compute los
@@ -59,7 +60,6 @@ class DeepModel(object):
             # backprop and update
             self.optim.zero_grad()
             loss.backward()
-            # nn.utils.clip_grad_norm_(self.net.parameters(), self.max_grad_norm)
             self.optim.step()
             
             # log info
@@ -72,7 +72,7 @@ class DeepModel(object):
                     epoch, (i+1)*100.0/num_batches, (time.time()-start_time), loss))
 
         lr = self.optim.param_groups[0]['lr']
-        logger.info('epoch %s  >> 100.00 (%2.3f sec) : lr %2.2f, train loss %2.5f'%(
+        logger.info('epoch %s  >> 100.00 (%2.3f sec) : lr %2.4f, train loss %2.5f'%(
             epoch, (time.time()-start_time), lr, train_loss/num_batches))
 
         self.lr_scheduler.step()

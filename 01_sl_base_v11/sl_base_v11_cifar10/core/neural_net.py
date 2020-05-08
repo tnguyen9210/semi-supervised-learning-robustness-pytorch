@@ -26,7 +26,7 @@ class BasicBlock(nn.Module):
         self.conv2 = conv3x3(out_channels, out_channels, stride=1)
         self.bn2 = nn.BatchNorm2d(out_channels)
         
-        self.relu = nn.ReLU(inplace=True)
+        self.relu = nn.LeakyReLU(0.1, inplace=True)
         self.drop = nn.Dropout2d(droprate)
 
         self.shortcut = nn.Sequential()

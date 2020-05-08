@@ -13,7 +13,7 @@ def parse_args():
     parser.add_argument('--img_size', type=int, default=32)
 
     # Training
-    parser.add_argument('--num_epochs', type=int, default=149, help="Number of total training epochs.")
+    parser.add_argument('--num_epochs', type=int, default=150, help="Number of total training epochs.")
     parser.add_argument('--batch_size', type=int, default=128, help="Training batch size.")
 
     # Optim

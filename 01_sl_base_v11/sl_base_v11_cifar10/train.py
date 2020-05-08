@@ -12,6 +12,8 @@ from utils import print_config, save_config, set_logger, EarlyStopper
 
 
 def train(config=None):
+    torch.backends.cudnn.benchmark = True  # speed up cudnn
+    
     args = parse_args()
     args = vars(args)
     if config:
@@ -57,9 +59,9 @@ def train(config=None):
             print_perfs(ds, eval_perfs[ds][epoch], logger)
 
         # select best model instance that has mimimum train loss
-        score = train_loss
+        score = eval_perfs['dev'][epoch]['error']
         if score < best_score:  
-            best_loss = score
+            best_score = score
             best_epoch = epoch
             logger.info(">>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<")
             # save the best state
@@ -72,7 +74,7 @@ def train(config=None):
 
     logger.info(f">>>>>>>>>>>>>>BEST PERFORMANCE, epoch {best_epoch}<<<<<<<<<<<<<<<<<<")
     for ds in eval_datasets:
-        print_perfs(ds, eval_perfs[ds][epoch], logger)
+        print_perfs(ds, eval_perfs[ds][best_epoch], logger)
 
     logger.handlers = []
     return [eval_perfs[ds][best_epoch]['acc'] for ds in eval_datasets]

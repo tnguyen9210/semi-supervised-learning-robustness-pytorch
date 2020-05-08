@@ -1,3 +1,6 @@
+"""
+Test adversarial attacks with saved models
+"""
 
 import numpy as np
 
@@ -6,6 +9,7 @@ import torch.nn.functional as F
 import torch.utils.data as data
 
 import torchvision.transforms as transforms
+from advertorch.attacks import GradientSignAttack, CarliniWagnerL2Attack, PGDAttack
 
 from core.deep_model import DeepModel
 
@@ -15,19 +19,14 @@ from utils import load_config
 
 
 def load_data(data_dir, domain, ds, img_size, batch_size):
-    normalize = transforms.Normalize(
-        mean=[0.4914, 0.4822, 0.4465], std=[0.2023, 0.1994, 0.2010])
     
-    eval_transform = transforms.Compose([
-        transforms.ToTensor(), normalize])
-    
-    eval_lbl = ImageDataset(
-        data_dir, domain, img_size, ds, transform=eval_transform)
+    eval_lbl = ImageDataset(data_dir, domain, img_size, ds)
 
     eval_lbl = data.DataLoader(
-        eval_lbl, batch_size=1, shuffle=False)
+        eval_lbl, batch_size=batch_size, shuffle=False, num_workers=16)
     
     return eval_lbl
+
 
 def test_attacks():
     args = parse_args()
@@ -35,63 +34,55 @@ def test_attacks():
     np.random.seed(args['seed'])
     torch.manual_seed(args['seed'])
     torch.cuda.manual_seed(args['seed'])
-    
-    # params
-    adv_eps = 0.1
+
+    # dir
+    model_dir = f"{args['model_dir']}/{args['model_id']}" 
 
     # load data
     eval_lbl = load_data(args['data_dir'], args['domain'], args['eval_set'],
-                         args['img_size'], batch_size=1)
+                         args['img_size'], args['batch_size'])
     
     # load net
-    model_dir = f"{args['model_dir']}/{args['model_id']}"
-    model_ckpt = f"{args['model_dir']}/{args['model_id']}/{args['ckpt_name']}"
     model_args = load_config(model_dir)
     model = DeepModel(model_args)
-    model.load_state(model_ckpt)
+    model.load_state(f"{model_dir}/{args['ckpt_name']}")
+    
     net = model.net
     net.eval()
 
-    # test attacks
+    # load attacker
+    attackers = {
+        'PGD': PGDAttack(
+            net, loss_fn=F.cross_entropy, eps=0.03, nb_iter=20, eps_iter=0.01)}
+    # attacker = GradientSignAttack(net, loss_fn=F.cross_entropy, eps=0.03)
+    attacker = PGDAttack(net, loss_fn=F.cross_entropy, eps=0.03, nb_iter=20, eps_iter=0.01)
+
+    # compute orig and adv accuracy
     num_eval = len(eval_lbl.dataset)
+    orig_corrects = 0.
     adv_corrects = 0.
-    for i, (orig_img, label) in enumerate(eval_lbl):
-        # if i > 1000:
-        #     break
+    for i, batch in enumerate(eval_lbl):
+        # get batch data 
+        orig_x, orig_y = batch
+        orig_x = orig_x.cuda()
+        orig_y = orig_y.cuda()
         
-        # get orig img and label
-        label = label.cuda()
-        orig_img = orig_img.cuda()
-        orig_img.requires_grad_(True)
-        
-        # feed img and compute pred
-        orig_logit = net(orig_img)
+        # compute orig accuracy
+        orig_logit = net(orig_x)
         orig_pred = torch.argmax(orig_logit, dim=1)
+        orig_corrects += torch.sum(orig_pred == orig_y).item()
 
-        # if orig prediction is wrong, do not bother attacking
-        if orig_pred != label:
-            continue
+        # generate adv samples
+        adv_x = attacker.perturb(orig_x, orig_y)
 
-        net.zero_grad()
-        
-        # compute grad
-        loss = F.cross_entropy(orig_logit, label)
-        loss.backward()
-        grad = orig_img.grad.detach()
-
-        # compute FGSM attack
-        fgsm_grad = grad.sign()
-        adv_img = orig_img + adv_eps*fgsm_grad
-        adv_img = torch.clamp(adv_img, 0, 1)  # clipping to maintain [0, 1] range
-        
-        # test on adv image
-        adv_logit = net(adv_img)
+        # compute adv accuracy
+        adv_logit = net(adv_x)
         adv_pred = torch.argmax(adv_logit, dim=1)
-        if adv_pred == label:
-            adv_corrects += 1
-
-    acc = adv_corrects/i*100
-    print(f"{args['eval_set']}: acc = {acc:2.2f}")
+        adv_corrects += torch.sum(adv_pred == orig_y).item()
+        
+    orig_acc = orig_corrects/num_eval*100
+    adv_acc = adv_corrects/num_eval*100
+    print(f"{args['eval_set']}: orig acc = {orig_acc:2.4f}, adv acc = {adv_acc:2.4f}")
     
     
 if __name__ == '__main__':
