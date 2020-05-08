@@ -37,14 +37,12 @@ def pkl_loader(path):
   #return img
   return _data
 
-def evaluation_data_loader(model_name, attk_type, requires_inv_transform=False):
-  normalize = transforms.Normalize(
-      mean=[0.4914, 0.4822, 0.4465], std=[0.2023, 0.1994, 0.2010])
+def evaluation_data_loader(model_name, dataset, attk_type, requires_inv_transform=False):
+  # Don't use normalization because pkl files are already saved normalized
   transform = transforms.Compose([
     transforms.ToTensor(),
-    # normalize,
   ])
-  path_to_data = path.join('x_adv', model_name, attk_type)
+  path_to_data = path.join('x_adv', model_name, dataset, attk_type)
   eval_dataset = DatasetFolder(path_to_data, pkl_loader, extensions=('pkl'), transform=transform)
   eval_data_loader = torch.utils.data.DataLoader(eval_dataset, batch_size=512, shuffle=False, num_workers=4)
   return eval_data_loader
@@ -83,31 +81,36 @@ if __name__ == "__main__":
 
   print("Evaluating robustness using: {}".format(device))
 
-  model_name = "sl_baseline_cifar10"
+  #model_name = "sl_baseline_cifar10"
+  model_name = "ssl_vat_v11_svhn"
+
+  # Specify what type of dataset we're going to use
+  dataset = "svhn"
 
   # Evaluate using x_adv
   # data_loader = baseline_data_loader("CIFAR10")
 
-  model = load_sl_baseline_model('pretrained/sl_base_v11_cifar10', with_weights=True)
+  #model = load_sl_baseline_model('pretrained/sl_base_v11_cifar10', with_weights=True)
+  model = load_sl_baseline_model("pretrained/{}".format(model_name), with_weights=True)
   model = model.net
   model.name = model_name
 
-  data_loader = evaluation_data_loader(model_name, "GradientSignAttack")
+  data_loader = evaluation_data_loader(model_name, dataset, "GradientSignAttack")
   total, correct = evaluate(model, data_loader)
   print(total, correct)
   print("Accuracy for GradientSign Attacks: {}".format(correct/total))
 
-  data_loader = evaluation_data_loader(model_name, "PGDAttack")
+  data_loader = evaluation_data_loader(model_name, dataset, "PGDAttack")
   total, correct = evaluate(model, data_loader)
   print(total, correct)
   print("Accuracy for PGD Attacks: {}".format(correct/total))
 
-  data_loader = evaluation_data_loader(model_name, "LinfPGDAttack")
+  data_loader = evaluation_data_loader(model_name, dataset, "LinfPGDAttack")
   total, correct = evaluate(model, data_loader)
   print(total, correct)
   print("Accuracy for LinfPGD Attacks: {}".format(correct/total))
 
-  data_loader = evaluation_data_loader(model_name, "L2PGDAttack")
+  data_loader = evaluation_data_loader(model_name, dataset, "L2PGDAttack")
   total, correct = evaluate(model, data_loader)
   print(total, correct)
   print("Accuracy for L2PGD Attacks: {}".format(correct/total))

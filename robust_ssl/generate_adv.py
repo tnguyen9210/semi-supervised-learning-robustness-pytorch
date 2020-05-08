@@ -73,7 +73,7 @@ def generate_gradient_sign_attack(model, data_loader, eps=0.01):
     adv_untargeted = adversary.perturb(data, labels)
     print("Saving x_adv for {} ~ {}".format(cnt, cnt + len(data)))
     dump_to_pkl(
-        model.name, 
+        os.path.join(model.name, model.dataset), 
         adv_untargeted.tolist(), labels.tolist(), 
         type_of_attack='GradientSignAttack', idx_offset=cnt)
     cnt += len(data)
@@ -102,7 +102,7 @@ def generate_pgd_attack(model, data_loader, eps=0.01):
     adv_untargeted = adversary.perturb(data, labels)
     print("Saving x_adv for {} ~ {}".format(cnt, cnt + len(data)))
     dump_to_pkl(
-        model.name, 
+        os.path.join(model.name, model.dataset), 
         adv_untargeted.tolist(), labels.tolist(), 
         type_of_attack='PGDAttack', idx_offset=cnt)
     cnt += len(data)
@@ -131,7 +131,7 @@ def generate_linf_pgd_attack(model, data_loader, eps=0.01):
     adv_untargeted = adversary.perturb(data, labels)
     print("Saving x_adv for {} ~ {}".format(cnt, cnt + len(data)))
     dump_to_pkl(
-        model.name, 
+        os.path.join(model.name, model.dataset), 
         adv_untargeted.tolist(), labels.tolist(), 
         type_of_attack='LinfPGDAttack', idx_offset=cnt)
     cnt += len(data)
@@ -160,7 +160,7 @@ def generate_l2_pgd_attack(model, data_loader, eps=0.01):
     adv_untargeted = adversary.perturb(data, labels)
     print("Saving x_adv for {} ~ {}".format(cnt, cnt + len(data)))
     dump_to_pkl(
-        model.name, 
+        os.path.join(model.name, model.dataset), 
         adv_untargeted.tolist(), labels.tolist(), 
         type_of_attack='L2PGDAttack', idx_offset=cnt)
     cnt += len(data)
@@ -189,7 +189,7 @@ def generate_l1_pgd_attack(model, data_loader, eps=0.01):
     adv_untargeted = adversary.perturb(data, labels)
     print("Saving x_adv for {} ~ {}".format(cnt, cnt + len(data)))
     dump_to_pkl(
-        model.name, 
+        os.path.join(model.name, model.dataset), 
         adv_untargeted.tolist(), labels.tolist(), 
         type_of_attack='L1PGDAttack', idx_offset=cnt)
     cnt += len(data)
@@ -198,25 +198,43 @@ def generate_l1_pgd_attack(model, data_loader, eps=0.01):
   print('L1PGDAttack generation complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
 
 if __name__ == "__main__":
-
-  device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
   print("==============================")
   print("Need to (hard-code) specify the following:")
   print("==============================")
   print("Path to model, default model is Resnet-18")
   print("Types of adversarial attacks, default attack is Gradient Sign Attack")
   print("Type of dataset, default is CIFAR-10")
-  print("Path to write adversarial examples, default is './x_adv/<model_name>/<type_of_attack>/<image_id>.pkl'")
+  print("Path to write adversarial examples, default is './x_adv/<model_name>/<dataset>/<type_of_attack>/<image_id>.pkl'")
 
+  # Parse arguments
+  import argparse
+  parser = argparse.ArgumentParser()
+  parser.add_argument('--dataset', type=str, default="cifar10", help="cifar10 | svhn")
+  parser.add_argument('--sl_or_ssl', type=str, default="sl", help="sl | ssl")
+  parser.add_argument('--base_or_vat', type=str, default="base", help="base | vat")
+  args =  parser.parse_args()
+
+  args = vars(args)
+  dataset = args['dataset']
+  sl_or_ssl = args['sl_or_ssl']
+  base_or_vat = args['base_or_vat']
+
+  model_name = "{}_{}_{}".format(sl_or_ssl, base_or_vat, dataset)
+
+  device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
   print("Generating using: {}".format(device))
 
-  # Load test data
-  data_loader = baseline_data_loader("CIFAR10")
-  model = load_sl_baseline_model('pretrained/sl_base_v11_cifar10', with_weights=True)
+  if dataset == "cifar10":
+    # Load test data
+    data_loader = baseline_data_loader("CIFAR10")
+  elif dataset == "svhn":
+    data_loader = baseline_data_loader("SVHN")
+
   # Load model
+  model = load_sl_baseline_model('pretrained/{}_{}_v11_{}'.format(sl_or_ssl, base_or_vat, dataset), with_weights=True)
   model = model.net
-  model.name = "sl_baseline_cifar10"
+  model.name = model_name
+  model.dataset = dataset
 
   # Generate pertubed data
   generate_gradient_sign_attack(model, data_loader)
@@ -225,4 +243,3 @@ if __name__ == "__main__":
   generate_l2_pgd_attack(model, data_loader)
   # Implementation has a minor bug, soon will be fixed in advertorch repo
   # generate_l1_pgd_attack(model, data_loader)
-
