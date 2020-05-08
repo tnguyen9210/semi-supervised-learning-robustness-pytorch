@@ -11,9 +11,9 @@ We use the following dataset formats for both CIFAR10 and SVHN domains
 
 `domain_train_lbl`: train dataset, original train dataset minus dev dataset 
 
-`domain_train_lbl_{num_lbl}`: labeled train dataset, splitted from train_lbl
+`domain_train_lbl_numlbl`: labeled train dataset, splitted from train_lbl
 
-`domain_train_unlbl_{num_lbl}`: unlabeled train dataset, train_lbl dataset minus lbl_{num_lbl}
+`domain_train_unlbl_numlbl`: unlabeled train dataset, train_lbl dataset minus lbl_num_lbl
 
 For pre-processing, CIFAR10 datasets are applied global contrast normalization and ZCA whitening. SVHN datasets are applied global contrast normalization. These pre-processing steps are needed for the performance and needed for our `ImageDataset` class (instead of generic torchvision datasets).
 
