@@ -8,8 +8,8 @@ def parse_args():
     # General
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--device', type=str, default="cuda:0")
-    parser.add_argument('--data_dir', type=str, default="../../data/cifar10_v11")
-    parser.add_argument('--domain', type=str, default="cifar10_orig")
+    parser.add_argument('--data_dir', type=str, default="../../data/svhn_v11")
+    parser.add_argument('--domain', type=str, default="svhn_orig")
     parser.add_argument('--img_size', type=int, default=32)
 
     # Training

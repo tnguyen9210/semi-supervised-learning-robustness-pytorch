@@ -15,7 +15,7 @@ def parse_args():
     # Training
     parser.add_argument('--num_epochs', type=int, default=150)
     parser.add_argument('--num_iters', type=int, default=500000)
-    parser.add_argument('--num_iters_per_epoch', type=int, default=2000)
+    parser.add_argument('--num_iters_per_epoch', type=int, default=1000)
     parser.add_argument('--batch_size', type=int, default=100)
     
     # Optim

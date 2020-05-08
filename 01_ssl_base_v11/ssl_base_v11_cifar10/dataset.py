@@ -20,7 +20,7 @@ def load_data(domain, data_dir, img_size, num_iters_per_epoch, batch_size):
     print(f"test dataset num data: {test_lbl.num_data}")
 
     train_lbl_sampler = data.RandomSampler(
-        train_lbl, replacement=True, num_samples=num_iters_per_epoch*batch_size//2)
+        train_lbl, replacement=True, num_samples=num_iters_per_epoch*batch_size)
     
     train_lbl = data.DataLoader(
         train_lbl, batch_size=batch_size, num_workers=16,

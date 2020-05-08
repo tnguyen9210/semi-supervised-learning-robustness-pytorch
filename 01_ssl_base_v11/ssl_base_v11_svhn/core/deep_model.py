@@ -16,7 +16,7 @@ class DeepModel(object):
         # neuralnet and losses
         self.net = ResNet(args)
         self.cls_crit = nn.CrossEntropyLoss()
-        self.transform = ImageTransform(random_horizontal_flip=False, random_crop=True)
+        self.transform = ImageTransform(random_horizontal_flip=True, random_crop=True)
 
         self.net.to(self.device)
         self.cls_crit.to(self.device)

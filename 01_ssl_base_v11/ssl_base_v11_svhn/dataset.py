@@ -11,7 +11,7 @@ import torch.utils.data as data
 def load_data(domain, data_dir, img_size, num_iters_per_epoch, batch_size):
 
     # load data
-    train_lbl = ImageDataset(data_dir, domain, img_size, ds='train_lbl')
+    train_lbl = ImageDataset(data_dir, domain, img_size, ds='train_lbl_1000')
     dev_lbl = ImageDataset(data_dir, domain, img_size, ds='dev_lbl')
     test_lbl = ImageDataset(data_dir, domain, img_size, ds='test_lbl')
 
