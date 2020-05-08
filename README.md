@@ -1,7 +1,9 @@
-# Semi-supervised-learning-robustness-pytorch
+# Semi-supervised Learning Robustness Pytorch
 Code for "Catching Generalization and Robustness with One Stone: A Unified Semi-supervised Learning Framework"
 
 ## Datasets
+
+For pre-processing, CIFAR10 datasets are applied global contrast normalization and ZCA whitening. SVHN datasets are applied global contrast normalization. These pre-processing steps are needed for the performance and needed for our `ImageDataset` class (instead of generic torchvision datasets).
 
 All preprocessed datasets for CIFAR10 and SVHN should be placed in dirs `data/cifar10_v11` and `data/svhn_v11` respectively.
 
