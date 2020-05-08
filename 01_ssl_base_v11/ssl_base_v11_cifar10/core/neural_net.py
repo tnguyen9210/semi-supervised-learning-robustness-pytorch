@@ -38,6 +38,13 @@ class BasicBlock(nn.Module):
 
     def forward(self, x):
 
+        # hidden = self.conv1(x)
+        # hidden = self.relu(hidden)
+
+        # hidden = self.conv2(hidden)
+        # hidden = self.drop(hidden)
+        # hidden = self.bn2(hidden + self.shortcut(x))
+        
         hidden = self.relu(self.bn1(self.conv1(x)))
         hidden = self.drop(hidden)
 
@@ -128,12 +135,6 @@ class ResNet(nn.Module):
             elif isinstance(m, nn.Linear):
                 nn.init.xavier_normal_(m.weight.data)
                 nn.init.constant_(m.bias, 0)
-
-    def update_batch_stats(self, flag):
-        for m in self.modules():
-            if isinstance(m, nn.BatchNorm2d):
-                m.update_batch_stats = flag
-
 
                 
         

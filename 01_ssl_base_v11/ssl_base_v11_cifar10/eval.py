@@ -18,7 +18,7 @@ from utils import load_config
 
 def load_data(data_dir, domain, ds, img_size, batch_size):
     normalize = transforms.Normalize(
-            mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+        mean=[0.4914, 0.4822, 0.4465], std=[0.2023, 0.1994, 0.2010])
     
     eval_transform = transforms.Compose([
         transforms.ToTensor(), normalize])

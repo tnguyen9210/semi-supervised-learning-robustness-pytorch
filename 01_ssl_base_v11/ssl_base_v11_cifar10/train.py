@@ -12,7 +12,7 @@ from utils import print_config, save_config, set_logger, EarlyStopper
 
 
 def train(config=None):
-    torch.backends.cudnn.benchmark = True
+    torch.backends.cudnn.benchmark = True  # speed up cudnn
     
     args = parse_args()
     args = vars(args)
@@ -29,7 +29,7 @@ def train(config=None):
     save_config(args, model_dir, verbose=True)
     
     # load data
-    train_lbl, train_unlbl, dev_lbl, test_lbl = \
+    train_lbl, dev_lbl, test_lbl = \
         load_data(args['domain'], args['data_dir'], args['img_size'],
                   args['num_iters_per_epoch'], args['batch_size'])
 
@@ -44,14 +44,14 @@ def train(config=None):
 
     # create early stopper
     early_stopper = EarlyStopper(
-        patience=8, mode="max", soft_eps=0.2, hard_thres=60)
+        patience=100, mode="max", soft_eps=0.2, hard_thres=85)
     
     # train model 
     best_score = 1000.
     best_epoch = 1
     for epoch in range(args['num_epochs']):
         logger.info(">>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<")
-        train_loss = model.update(train_lbl, train_unlbl, epoch, logger)
+        train_loss = model.update(train_lbl, epoch, logger)
 
         logger.info(">>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<")
         for ds in eval_datasets:
@@ -59,7 +59,7 @@ def train(config=None):
             print_perfs(ds, eval_perfs[ds][epoch], logger)
 
         # select best model instance that has mimimum train loss
-        score = dev_score = eval_perfs['dev'][epoch]['error']
+        score = eval_perfs['dev'][epoch]['error']
         if score < best_score:  
             best_score = score
             best_epoch = epoch
