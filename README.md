@@ -7,11 +7,11 @@ All preprocessed datasets for CIFAR10 and SVHN should be placed in dirs `data/ci
 
 ## Models
 
-sl_base_v11: full supervised learning with all labeled train dataset 
+sl_base: full supervised learning with all labeled train dataset 
 
-ssl_base_v11: supervised learning with few labeled train dataset
+ssl_base: supervised learning with few labeled train dataset
 
-ssl_vat_v11: vat semi-supervised learning with few labeled dataset and unlabeled dataset
+ssl_vat: vat semi-supervised learning with few labeled dataset and unlabeled dataset
 
 Notes: the outer version is the version of generated dataset (e.g., sl_base_v11), the inner version is the version of model's architecture (e.g., sl_base_v11_cifar10)
 
