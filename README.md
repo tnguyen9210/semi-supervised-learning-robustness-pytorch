@@ -24,12 +24,9 @@ All models are set with default parameters that can reproduce the performance re
 
 # How to test attacker
 
-All testing can be done in dir `10_test_adv_v11` with the following instructions.
+All testing can be done in dir `10_test_adv_v11` with the following instructions:
 
 1. copy the pretrained models into dir `10_test_adv_v11/saved_models`
-2. run cmd 
-~~~
-python --test_attacks.py --model_id=sl_base_v11_cifar10 --eval_set test_lbl
-~~~
+2. run cmd `python --test_attacks.py --model_id=sl_base_v11_cifar10 --eval_set test_lbl`
 
 where `--model_id` is the name of the model.
