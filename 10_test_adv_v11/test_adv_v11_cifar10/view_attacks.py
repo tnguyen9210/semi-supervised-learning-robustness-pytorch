@@ -78,8 +78,32 @@ def test_attacks():
         
     # show examples with 
     # show_sample_images(orig_x.cpu(), orig_y.cpu(), orig_pred, title='orig')
-    show_sample_images(orig_x.cpu(), adv_x.detach().cpu(), orig_y.cpu(), orig_pred, adv_pred)
+    # show_sample_images(orig_x.cpu(), adv_x.detach().cpu(), orig_y.cpu(), orig_pred, adv_pred)
+    dump_sample_images(orig_x.cpu(), adv_x.detach().cpu(), orig_y.cpu(), orig_pred, adv_pred)
     
+def dump_sample_images(orig_images, adv_images, orig_labels, orig_preds, adv_preds):
+    from PIL import Image
+    print(f"--> orig labels: {orig_labels}")
+    print(f"--> orig preds: {orig_preds}")
+    print(f"--> adv preds: {adv_preds}")
+
+    idx = 0
+    for oi, ai, ol, op, ap in zip(orig_images, adv_images, orig_labels, orig_preds, adv_preds):
+      oi = oi.numpy().transpose((1, 2, 0))
+      oi = np.clip(oi, 0, 1) * 255
+      oi = oi.astype('uint8')
+      ai = ai.numpy().transpose((1, 2, 0))
+      ai = np.clip(ai, 0, 1) * 255
+      ai = ai.astype('uint8')
+
+      oi = Image.fromarray(oi)
+      ai = Image.fromarray(ai)
+
+      oi.save("oi_{}.jpeg".format(idx))
+      ai.save("ai_{}.jpeg".format(idx))
+      idx += 1
+        
+
 def show_sample_images(orig_images, adv_images, orig_labels, orig_preds, adv_preds):
     print(f"--> orig labels: {orig_labels}")
     print(f"--> orig preds: {orig_preds}")
