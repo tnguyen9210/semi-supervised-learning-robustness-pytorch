@@ -9,7 +9,8 @@ import torch.nn.functional as F
 import torch.utils.data as data
 
 import torchvision.transforms as transforms
-from advertorch.attacks import GradientSignAttack, CarliniWagnerL2Attack, PGDAttack
+from advertorch import attacks 
+#import GradientSignAttack, CarliniWagnerL2Attack, PGDAttack
 
 from core.deep_model import DeepModel
 
@@ -41,6 +42,7 @@ def test_attacks():
     # load data
     eval_lbl = load_data(args['data_dir'], args['domain'], args['eval_set'],
                          args['img_size'], args['batch_size'])
+
     
     # load net
     model_args = load_config(model_dir)
@@ -49,13 +51,6 @@ def test_attacks():
     
     net = model.net
     net.eval()
-
-    # load attacker
-    attackers = {
-        'PGD': PGDAttack(
-            net, loss_fn=F.cross_entropy, eps=0.03, nb_iter=20, eps_iter=0.01)}
-    # attacker = GradientSignAttack(net, loss_fn=F.cross_entropy, eps=0.03)
-    attacker = PGDAttack(net, loss_fn=F.cross_entropy, eps=0.03, nb_iter=20, eps_iter=0.01)
 
     # compute orig and adv accuracy
     num_eval = len(eval_lbl.dataset)
@@ -72,18 +67,59 @@ def test_attacks():
         orig_pred = torch.argmax(orig_logit, dim=1)
         orig_corrects += torch.sum(orig_pred == orig_y).item()
 
-        # generate adv samples
-        adv_x = attacker.perturb(orig_x, orig_y)
-
-        # compute adv accuracy
-        adv_logit = net(adv_x)
-        adv_pred = torch.argmax(adv_logit, dim=1)
-        adv_corrects += torch.sum(adv_pred == orig_y).item()
-        
     orig_acc = orig_corrects/num_eval*100
     adv_acc = adv_corrects/num_eval*100
-    print(f"{args['eval_set']}: orig acc = {orig_acc:2.4f}, adv acc = {adv_acc:2.4f}")
-    
+    print(f"{args['eval_set']}: orig acc = {orig_acc:2.4f}")
+
+    # common config for attacks
+    common_attack_params = {
+        "loss_fn": F.cross_entropy,
+        "eps": 0.3,
+        "clip_min": 0.0,
+        "clip_max": 1.0,
+        "targeted": False,
+    }
+
+    num_classes = 10
+
+    # load attacker
+    attackers = {
+        'GradientSignAttack': attacks.GradientSignAttack(
+            net, **common_attack_params),
+        'PGD': attacks.PGDAttack(
+            net, **common_attack_params, nb_iter=40, eps_iter=0.01),
+        'LinfPGDAttack': attacks.LinfPGDAttack(
+            net, **common_attack_params, nb_iter=40, eps_iter=0.01),
+        'L2PGDAttack': attacks.L2PGDAttack(
+            net, **common_attack_params, nb_iter=40, eps_iter=0.01),
+        #'CarlinWagnerL2Attack': attacks.CarliniWagnerL2Attack(
+        #    net, num_classes, loss_fn=F.cross_entropy), # Use default values. Not familiar with implementation
+        'DDNL2Attack': attacks.DDNL2Attack(
+            net, loss_fn=F.cross_entropy, nb_iter=100, gamma=0.05),
+        }
+
+    for name, attacker in attackers.items():
+      print("Running {} attack...".format(name))
+
+      # compute orig and adv accuracy
+      num_eval = len(eval_lbl.dataset)
+      adv_corrects = 0.
+      for i, batch in enumerate(eval_lbl):
+          # get batch data 
+          orig_x, orig_y = batch
+          orig_x = orig_x.cuda()
+          orig_y = orig_y.cuda()
+          
+          # generate adv samples
+          adv_x = attacker.perturb(orig_x, orig_y)
+
+          # compute adv accuracy
+          adv_logit = net(adv_x)
+          adv_pred = torch.argmax(adv_logit, dim=1)
+          adv_corrects += torch.sum(adv_pred == orig_y).item()
+          
+      adv_acc = adv_corrects/num_eval*100
+      print(f"{name} attack adv acc = {adv_acc:2.4f}")
     
 if __name__ == '__main__':
     test_attacks()
