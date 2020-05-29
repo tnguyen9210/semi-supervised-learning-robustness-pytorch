@@ -21,19 +21,11 @@ from utils import load_config
 
 
 def load_data(data_dir, domain, ds, img_size, batch_size):
-
-    normalize = transforms.Normalize(
-      mean=[0.4914, 0.4821, 0.4463], std=[0.2467, 0.2431, 0.2611])
-
-    test_transform = transforms.Compose([
-        transforms.ToTensor(), 
-        #  normalize
-    ])
     
-    eval_lbl = ImageDataset(data_dir, domain, img_size, ds, transform=test_transform)
+    eval_lbl = ImageDataset(data_dir, domain, img_size, ds)
 
     eval_lbl = data.DataLoader(
-        eval_lbl, batch_size=batch_size, shuffle=False, num_workers=16)
+        eval_lbl, batch_size=batch_size, shuffle=True, num_workers=16)
     
     return eval_lbl
 
@@ -61,9 +53,8 @@ def test_attacks():
     net.eval()
 
     # load attacker
-    # attacker = GradientSignAttack(net, loss_fn=F.cross_entropy, eps=8.0/255)
-    attacker = PGDAttack(
-        net, loss_fn=F.cross_entropy, eps=8.0/255., nb_iter=7, eps_iter=2.0/255.)
+    attacker = GradientSignAttack(net, loss_fn=F.cross_entropy, eps=0.03)
+    # attacker = PGDAttack(net, loss_fn=F.cross_entropy, eps=0.03, nb_iter=20, eps_iter=0.01)
 
     # compute orig and adv accuracy
     num_eval = len(eval_lbl.dataset)
@@ -88,29 +79,6 @@ def test_attacks():
     # show examples with 
     # show_sample_images(orig_x.cpu(), orig_y.cpu(), orig_pred, title='orig')
     show_sample_images(orig_x.cpu(), adv_x.detach().cpu(), orig_y.cpu(), orig_pred, adv_pred)
-    # dump_sample_images(orig_x.cpu(), adv_x.detach().cpu(), orig_y.cpu(), orig_pred, adv_pred)
-
-def dump_sample_images(orig_images, adv_images, orig_labels, orig_preds, adv_preds):
-    from PIL import Image
-    print(f"--> orig labels: {orig_labels}")
-    print(f"--> orig preds: {orig_preds}")
-    print(f"--> adv preds: {adv_preds}")
-
-    idx = 0
-    for oi, ai, ol, op, ap in zip(orig_images, adv_images, orig_labels, orig_preds, adv_preds):
-      oi = oi.numpy().transpose((1, 2, 0))
-      oi = np.clip(oi, 0, 1) * 255
-      oi = oi.astype('uint8')
-      ai = ai.numpy().transpose((1, 2, 0))
-      ai = np.clip(ai, 0, 1) * 255
-      ai = ai.astype('uint8')
-
-      oi = Image.fromarray(oi)
-      ai = Image.fromarray(ai)
-
-      oi.save("oi_{}.jpeg".format(idx))
-      ai.save("ai_{}.jpeg".format(idx))
-      idx += 1
     
 def show_sample_images(orig_images, adv_images, orig_labels, orig_preds, adv_preds):
     print(f"--> orig labels: {orig_labels}")
@@ -131,7 +99,6 @@ def show_sample_images(orig_images, adv_images, orig_labels, orig_preds, adv_pre
     axes[1].imshow(adv_images)
     
     plt.show()
-    plt.savefig('temp.png')
  
 if __name__ == '__main__':
     test_attacks()

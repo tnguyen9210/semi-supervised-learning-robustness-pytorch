@@ -72,7 +72,7 @@ def test_attacks():
     # common config for attacks
     common_attack_params = {
         "loss_fn": F.cross_entropy,
-        "eps": 0.03,
+        "eps": 8/255,
         "clip_min": 0.0,
         "clip_max": 1.0,
         "targeted": False,

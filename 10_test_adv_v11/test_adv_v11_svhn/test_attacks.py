@@ -86,16 +86,14 @@ def test_attacks():
     attackers = {
         'GradientSignAttack': attacks.GradientSignAttack(
             net, **common_attack_params),
-        'PGD': attacks.PGDAttack(
-            net, **common_attack_params, nb_iter=40, eps_iter=0.01),
+        #'PGD': attacks.PGDAttack(
+        #    net, **common_attack_params, nb_iter=40, eps_iter=0.01),
         'LinfPGDAttack': attacks.LinfPGDAttack(
             net, **common_attack_params, nb_iter=40, eps_iter=0.01),
         'L2PGDAttack': attacks.L2PGDAttack(
             net, **common_attack_params, nb_iter=40, eps_iter=0.01),
         #'CarlinWagnerL2Attack': attacks.CarliniWagnerL2Attack(
         #    net, num_classes, loss_fn=F.cross_entropy), # Use default values. Not familiar with implementation
-        'DDNL2Attack': attacks.DDNL2Attack(
-            net, loss_fn=F.cross_entropy, nb_iter=100, gamma=0.05),
         }
 
     for name, attacker in attackers.items():
