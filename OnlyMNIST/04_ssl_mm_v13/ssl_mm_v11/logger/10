@@ -1,0 +1,199 @@
+INFO: Running with the following configs:
+	seed : 0
+	device : cuda:0
+	data_dir : ../../data/mnist_v13
+	domain : mnist_orig
+	img_size : 28
+	batch_size : 100
+	num_epochs : 20
+	num_iters_per_epoch : 1000
+	optim : sgd
+	lr : 0.05
+	momentum : 0.9
+	l2_params : 0.0005
+	max_grad_norm : 1
+	scheduler_t0 : 20
+	scheduler_tmult : 1
+	mm_num_augments : 2
+	mm_temperature : 0.5
+	mm_alpha : 0.75
+	mm_consis_coef : 75
+	lenet_depth : 28
+	lenet_widen_factor : 1
+	lenet_droprate : 0.3
+	fc_nlayers : 1
+	fc_hidden_dim : 1024
+	fc_droprate : 0.3
+	model_id : 90
+	model_dir : ./saved_models
+	eval_set : test_lbl
+	ckpt_name : best_model.ckpt
+	load : False
+
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 0, it 251 >> 25.00 (3.576 sec) : loss = 2.44337
+INFO: epoch 0, it 502 >> 50.10 (7.193 sec) : loss = 0.52658
+INFO: epoch 0, it 753 >> 75.20 (10.837 sec) : loss = 0.47037
+INFO: epoch 0, it 1000 >> 100.00 (14.534 sec) : lr 0.0500, train loss 2.19439
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.6
+INFO: test : error = 2.03
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 1, it 1251 >> 25.00 (3.394 sec) : loss = 0.94012
+INFO: epoch 1, it 1502 >> 50.10 (6.379 sec) : loss = 1.29101
+INFO: epoch 1, it 1753 >> 75.20 (9.364 sec) : loss = 2.65170
+INFO: epoch 1, it 2000 >> 100.00 (12.312 sec) : lr 0.0497, train loss 1.58952
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.6
+INFO: test : error = 1.48
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 2, it 2251 >> 25.00 (3.640 sec) : loss = 1.94358
+INFO: epoch 2, it 2502 >> 50.10 (7.469 sec) : loss = 0.22952
+INFO: epoch 2, it 2753 >> 75.20 (11.009 sec) : loss = 0.30515
+INFO: epoch 2, it 3000 >> 100.00 (14.108 sec) : lr 0.0488, train loss 1.45656
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.4
+INFO: test : error = 1.6
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 3, it 3251 >> 25.00 (3.542 sec) : loss = 1.12971
+INFO: epoch 3, it 3502 >> 50.10 (6.925 sec) : loss = 2.41786
+INFO: epoch 3, it 3753 >> 75.20 (10.299 sec) : loss = 1.54023
+INFO: epoch 3, it 4000 >> 100.00 (13.389 sec) : lr 0.0473, train loss 1.44235
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.1
+INFO: test : error = 1.31
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 4, it 4251 >> 25.00 (3.699 sec) : loss = 1.03124
+INFO: epoch 4, it 4502 >> 50.10 (7.333 sec) : loss = 1.88048
+INFO: epoch 4, it 4753 >> 75.20 (11.023 sec) : loss = 0.40083
+INFO: epoch 4, it 5000 >> 100.00 (14.672 sec) : lr 0.0452, train loss 1.44609
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 2.1
+INFO: test : error = 1.65
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 5, it 5251 >> 25.00 (3.727 sec) : loss = 0.34640
+INFO: epoch 5, it 5502 >> 50.10 (6.958 sec) : loss = 0.40585
+INFO: epoch 5, it 5753 >> 75.20 (10.184 sec) : loss = 0.89114
+INFO: epoch 5, it 6000 >> 100.00 (13.305 sec) : lr 0.0427, train loss 1.36281
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.1
+INFO: test : error = 1.06
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 6, it 6251 >> 25.00 (3.913 sec) : loss = 1.74095
+INFO: epoch 6, it 6502 >> 50.10 (7.571 sec) : loss = 1.54265
+INFO: epoch 6, it 6753 >> 75.20 (10.987 sec) : loss = 0.17389
+INFO: epoch 6, it 7000 >> 100.00 (14.284 sec) : lr 0.0397, train loss 1.34243
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.4
+INFO: test : error = 1.26
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 7, it 7251 >> 25.00 (3.283 sec) : loss = 1.30487
+INFO: epoch 7, it 7502 >> 50.10 (6.445 sec) : loss = 1.18854
+INFO: epoch 7, it 7753 >> 75.20 (9.580 sec) : loss = 0.40918
+INFO: epoch 7, it 8000 >> 100.00 (12.656 sec) : lr 0.0363, train loss 1.33912
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.1
+INFO: test : error = 0.97
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 8, it 8251 >> 25.00 (3.565 sec) : loss = 2.05381
+INFO: epoch 8, it 8502 >> 50.10 (6.963 sec) : loss = 1.30484
+INFO: epoch 8, it 8753 >> 75.20 (10.541 sec) : loss = 1.11947
+INFO: epoch 8, it 9000 >> 100.00 (13.944 sec) : lr 0.0327, train loss 1.28500
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 0.8
+INFO: test : error = 0.97
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 9, it 9251 >> 25.00 (3.611 sec) : loss = 1.55562
+INFO: epoch 9, it 9502 >> 50.10 (6.904 sec) : loss = 0.70233
+INFO: epoch 9, it 9753 >> 75.20 (10.143 sec) : loss = 1.40684
+INFO: epoch 9, it 10000 >> 100.00 (13.096 sec) : lr 0.0289, train loss 1.29233
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 0.8
+INFO: test : error = 1.05
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 10, it 10251 >> 25.00 (3.513 sec) : loss = 0.56510
+INFO: epoch 10, it 10502 >> 50.10 (6.811 sec) : loss = 0.93758
+INFO: epoch 10, it 10753 >> 75.20 (9.949 sec) : loss = 2.30787
+INFO: epoch 10, it 11000 >> 100.00 (13.482 sec) : lr 0.0250, train loss 1.28123
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.2
+INFO: test : error = 0.93
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 11, it 11251 >> 25.00 (3.719 sec) : loss = 1.53193
+INFO: epoch 11, it 11502 >> 50.10 (7.060 sec) : loss = 0.57390
+INFO: epoch 11, it 11753 >> 75.20 (10.218 sec) : loss = 1.21633
+INFO: epoch 11, it 12000 >> 100.00 (13.468 sec) : lr 0.0211, train loss 1.25525
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.2
+INFO: test : error = 0.93
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 12, it 12251 >> 25.00 (3.404 sec) : loss = 1.91163
+INFO: epoch 12, it 12502 >> 50.10 (6.597 sec) : loss = 0.42968
+INFO: epoch 12, it 12753 >> 75.20 (9.711 sec) : loss = 1.94195
+INFO: epoch 12, it 13000 >> 100.00 (12.739 sec) : lr 0.0173, train loss 1.24977
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 0.8
+INFO: test : error = 0.91
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 13, it 13251 >> 25.00 (3.618 sec) : loss = 0.41239
+INFO: epoch 13, it 13502 >> 50.10 (7.333 sec) : loss = 1.53800
+INFO: epoch 13, it 13753 >> 75.20 (10.487 sec) : loss = 0.30330
+INFO: epoch 13, it 14000 >> 100.00 (13.499 sec) : lr 0.0137, train loss 1.16669
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.1
+INFO: test : error = 0.85
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 14, it 14251 >> 25.00 (3.710 sec) : loss = 0.25415
+INFO: epoch 14, it 14502 >> 50.10 (7.057 sec) : loss = 2.04743
+INFO: epoch 14, it 14753 >> 75.20 (10.706 sec) : loss = 0.56992
+INFO: epoch 14, it 15000 >> 100.00 (14.295 sec) : lr 0.0103, train loss 1.15932
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.3
+INFO: test : error = 0.88
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 15, it 15251 >> 25.00 (3.454 sec) : loss = 0.40505
+INFO: epoch 15, it 15502 >> 50.10 (6.896 sec) : loss = 1.48039
+INFO: epoch 15, it 15753 >> 75.20 (10.523 sec) : loss = 0.27047
+INFO: epoch 15, it 16000 >> 100.00 (14.113 sec) : lr 0.0073, train loss 1.15525
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.1
+INFO: test : error = 0.86
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 16, it 16251 >> 25.00 (3.414 sec) : loss = 1.77648
+INFO: epoch 16, it 16502 >> 50.10 (7.253 sec) : loss = 0.98463
+INFO: epoch 16, it 16753 >> 75.20 (10.947 sec) : loss = 0.59811
+INFO: epoch 16, it 17000 >> 100.00 (14.410 sec) : lr 0.0048, train loss 1.15170
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 0.9
+INFO: test : error = 0.85
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 17, it 17251 >> 25.00 (3.564 sec) : loss = 0.55791
+INFO: epoch 17, it 17502 >> 50.10 (6.692 sec) : loss = 0.70702
+INFO: epoch 17, it 17753 >> 75.20 (9.804 sec) : loss = 1.32244
+INFO: epoch 17, it 18000 >> 100.00 (13.046 sec) : lr 0.0027, train loss 1.15000
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.2
+INFO: test : error = 0.79
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 18, it 18251 >> 25.00 (3.294 sec) : loss = 1.22006
+INFO: epoch 18, it 18502 >> 50.10 (6.295 sec) : loss = 1.71689
+INFO: epoch 18, it 18753 >> 75.20 (9.832 sec) : loss = 1.63692
+INFO: epoch 18, it 19000 >> 100.00 (12.919 sec) : lr 0.0012, train loss 1.13237
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.0
+INFO: test : error = 0.83
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 19, it 19251 >> 25.00 (3.377 sec) : loss = 0.48780
+INFO: epoch 19, it 19502 >> 50.10 (6.559 sec) : loss = 0.90781
+INFO: epoch 19, it 19753 >> 75.20 (10.150 sec) : loss = 1.05689
+INFO: epoch 19, it 20000 >> 100.00 (13.434 sec) : lr 0.0003, train loss 1.11864
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 1.0
+INFO: test : error = 0.78
+INFO: >>>>>>>>>>>>>>BEST PERFORMANCE, epoch 8<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 0.8
+INFO: test : error = 0.97

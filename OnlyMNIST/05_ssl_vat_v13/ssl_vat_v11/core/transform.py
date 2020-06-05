@@ -23,7 +23,7 @@ class ImageTransform(object):
             x = x[:,:,t:t+h,l:l+w]
         if self.add_noise:
             pass
-        
+
         return x
 
 
