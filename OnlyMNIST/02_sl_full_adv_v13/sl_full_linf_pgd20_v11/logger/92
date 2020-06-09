@@ -1,0 +1,54 @@
+INFO: Running with the following configs:
+	seed : 0
+	device : cuda:0
+	data_dir : ../../data/mnist_v13
+	domain : mnist_orig
+	img_size : 28
+	batch_size : 100
+	num_epochs : 20
+	num_iters_per_epoch : 1000
+	optim : sgd
+	lr : 0.05
+	momentum : 0.9
+	l2_params : 0.0005
+	max_grad_norm : 1
+	scheduler_t0 : 10
+	scheduler_tmult : 1
+	lenet_depth : 28
+	lenet_widen_factor : 1
+	lenet_droprate : 0.3
+	fc_nlayers : 1
+	fc_hidden_dim : 1024
+	fc_droprate : 0.3
+	model_id : 92
+	model_dir : ./saved_models
+	eval_set : test_lbl
+	ckpt_name : best_model.ckpt
+	load : False
+
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 0, it 251 >> 25.00 (15.166 sec) : loss = 2.29492
+INFO: epoch 0, it 502 >> 50.10 (30.285 sec) : loss = 2.29927
+INFO: epoch 0, it 753 >> 75.20 (45.483 sec) : loss = 2.29404
+INFO: epoch 0, it 1000 >> 100.00 (60.337 sec) : lr 0.0500, train loss 2.30345
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 90.0
+INFO: test : error = 88.65
+INFO: >>>>>>>>>>>>>>NEW BEST PERFORMANCE<<<<<<<<
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 1, it 1251 >> 25.00 (14.860 sec) : loss = 2.29057
+INFO: epoch 1, it 1502 >> 50.10 (30.503 sec) : loss = 2.30021
+INFO: epoch 1, it 1753 >> 75.20 (45.539 sec) : loss = 2.29954
+INFO: epoch 1, it 2000 >> 100.00 (60.844 sec) : lr 0.0488, train loss 2.30215
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 90.0
+INFO: test : error = 88.65
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
+INFO: epoch 2, it 2251 >> 25.00 (14.549 sec) : loss = 2.29817
+INFO: epoch 2, it 2502 >> 50.10 (29.428 sec) : loss = 2.30985
+INFO: epoch 2, it 2753 >> 75.20 (44.873 sec) : loss = 2.30022
+INFO: epoch 2, it 3000 >> 100.00 (60.155 sec) : lr 0.0452, train loss 2.30223
+INFO: >>>>>>>>>>>>>>EVALUATING<<<<<<<<<<<<<<<<<<
+INFO: dev : error = 90.0
+INFO: test : error = 88.65
+INFO: >>>>>>>>>>>>>>TRAINING<<<<<<<<<<<<<<<<<<<<
