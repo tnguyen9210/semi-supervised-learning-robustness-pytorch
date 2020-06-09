@@ -7,7 +7,43 @@ import torch
 import torch.nn.functional as F
 import torch.utils.data as data
 
+class CutoutDefault:
+  def __init__(self, length):
+    self.length
+  def __call__(self, img):
+    if self.length <= 0:
+      return img
+    h, w = img.size(1), img.size(2)
+    mask = np.ones((h, w), np.float32)
+    y = np.random.randint(h)
+    x = np.random.randint(w)
+    
+    y1 = np.clip(y - self.length // 2, 0, h)
+    y2 = np.clip(y + self.length // 2, 0, h)
+    x1 = np.clip(x - self.length // 2, 0, w)
+    x2 = np.clip(x + self.length // 2, 0, w)
 
+    mask[y1: y2, x1: x2] = 0.
+    mask = torch.from_numpy(mask)
+    mask = mask.expand_as(img)
+    img *= mask
+
+    return img
+
+class ImageDataset(data.Dataset):
+  def __init__(self, dataset, transform_default, transform_aug, cutout=0):
+    self.dataset = dataset
+    self.transform_default = transform_default
+    self.transform_aug = transform_aug
+    self.transform_cutout = CutoutDefault(cutout)
+
+  def __getitem__(self, index):
+    img, label = self.dataset[index]
+
+  def __len__(self):
+    return len(self.dataset)
+
+"""
 def load_data(domain, data_dir, img_size, num_iters_per_epoch, batch_size):
 
     # load data
@@ -81,3 +117,4 @@ class ImageDataset(data.Dataset):
 
     
 
+"""
